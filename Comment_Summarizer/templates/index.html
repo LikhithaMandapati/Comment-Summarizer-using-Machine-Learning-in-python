@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aspect and Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+            padding-left: 650px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            color: #333;
+            padding-left: 650px;
+            margin-top: 20px;
+        }
+
+        p {
+            padding-left: 650px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <centre>
+    <h2>
+        Aspect and Sentiment Analysis
+    </h2>
+    </centre>
+    <form action="/" method="post">
+        <label for="text">Text:</label><br>
+        <input type="text" id="text" name="text" style="width: 300px;"><br>
+        <label for="choice">Choose an option:</label><br>
+        <select name="choice" id="choice">
+            <option value="Detect Aspects">Detect Aspects</option>
+            <option value="Detect Sentiment">Detect Sentiment</option>
+            <option value="Summarization">Summarization</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    {% if prediction_result %}
+        <h3>Prediction:</h3>
+        <p>{{ prediction_result }}</p>
+    {% endif %}
+</body>
+</html>
+
